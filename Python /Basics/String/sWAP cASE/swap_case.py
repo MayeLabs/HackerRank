@@ -7,6 +7,7 @@
 # Function of string for converting and identification 
 # For because I need iterate trough the array
 
+""" Before Function
 def swap_case(s):
     word = ''
     for i in range(len(s)):
@@ -15,9 +16,19 @@ def swap_case(s):
         else:
             word = word + s[i].lower()
     return word
+"""
+
+# Best Function
+def swap_case(s):
+    return ''.join([char.upper() if char.islower() else char.lower() for char in s])
+
 
 
 if __name__ == '__main__':
-    word = str(input())
+    word = input()
     print(swap_case(word))
 
+
+# Why is better ? 
+# Concatenate can be expensive, because each time that concatenate python create a new string the join of list is more efficient
+# The best of way to read a str is using only input 
